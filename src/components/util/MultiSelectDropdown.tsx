@@ -60,6 +60,8 @@ export class MultiSelectDropDown extends React.PureComponent<MultiSelectDropDown
     const {selected} = this.state;
     const {options, title, selectAllLabel, disableSearch} = this.props;
 
+    //Do not do this._handleSelectedChanged.bind(this), use =>
+    //Refer to https://medium.freecodecamp.org/the-best-way-to-bind-event-handlers-in-react-282db2cf1530
     return (<div>
       <div>{title}</div>
       <MultiSelect
@@ -69,7 +71,7 @@ export class MultiSelectDropDown extends React.PureComponent<MultiSelectDropDown
         selectAllLabel={selectAllLabel? selectAllLabel: "Select All"}
         valueRenderer={this._valueRenderer}
         filterOptions={this._filterOptions}
-        onSelectedChanged={this._handleSelectedChanged.bind(this)} />
+        onSelectedChanged={this._handleSelectedChanged} />
     </div>);
   }
 }
