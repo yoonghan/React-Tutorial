@@ -6,6 +6,7 @@ import {UsingTextField} from "./components/container/UsingTextField";
 import {TextFieldWithLessRender} from "./components/container/TextFieldWithLessRender";
 import {TextFieldWithConnectionWrapper} from "./components/container/TextFieldWithConnection";
 import {TextFieldWithConnectionAndLoader} from "./components/container/TextFieldWithConnectionAndLoader";
+import {TextFieldWithConnectionWithConnection} from "./components/container/TextFieldWithConnectionWithConnection";
 
 
 /**
@@ -58,7 +59,19 @@ import {TextFieldWithConnectionAndLoader} from "./components/container/TextField
 /**
  * How hoc is used, this also shows if Loading is put in render, the add/removal of component resets the value.
  **/
+// ReactDOM.render(
+//     <TextFieldWithConnectionAndLoader value={"sample"}/>,
+//     document.getElementById("example")
+// );
+
+/**
+ * Test how text field with Connection that call ontop of it another connection first.
+ **/
+ //A hack on the top.
+ const props:any = {
+   value: "Sample Value for HOC 2"
+ }
 ReactDOM.render(
-    <TextFieldWithConnectionAndLoader value={"sample"}/>,
+    <TextFieldWithConnectionWithConnection {...props} />,
     document.getElementById("example")
 );

@@ -12,7 +12,7 @@ declare module "@khanacademy/react-multi-select" {
     disableSearch:boolean;
     valueRenderer:(selected:Array<MultiSelectItem>, options:Array<MultiSelectItem>)=>void;
     filterOptions:(options: Array<MultiSelectItem>, filter: string)=>Array<MultiSelectItem>;
-    onSelectedChanged: ()=>void;
+    onSelectedChanged: (selected:Array<MultiSelectItem>)=>void;
   }
 
   class MultiSelect extends React.Component<MultiSelectProps, {}> {
