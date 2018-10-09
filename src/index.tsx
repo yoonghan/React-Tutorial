@@ -7,7 +7,7 @@ import {TextFieldWithLessRender} from "./components/container/TextFieldWithLessR
 import {TextFieldWithConnectionWrapper} from "./components/container/TextFieldWithConnection";
 import {TextFieldWithConnectionAndLoader} from "./components/container/TextFieldWithConnectionAndLoader";
 import {TextFieldWithConnectionWithConnection} from "./components/container/TextFieldWithConnectionWithConnection";
-
+import {SwitchingButtonWithSubmit} from "./components/container/SwitchingButtonWithSubmit";
 
 /**
  * Example to use route.
@@ -68,10 +68,18 @@ import {TextFieldWithConnectionWithConnection} from "./components/container/Text
  * Test how text field with Connection that call ontop of it another connection first.
  **/
  //A hack on the top.
- const props:any = {
-   value: "Sample Value for HOC 2"
- }
+//  const props:any = {
+//    value: "Sample Value for HOC 2"
+//  }
+// ReactDOM.render(
+//     <TextFieldWithConnectionWithConnection {...props} />,
+//     document.getElementById("example")
+// );
+
+/**
+ * Triggering a changing button, upon click it triggers the database and each calls the service
+ **/
 ReactDOM.render(
-    <TextFieldWithConnectionWithConnection {...props} />,
+    <SwitchingButtonWithSubmit id="55"/>,
     document.getElementById("example")
 );
