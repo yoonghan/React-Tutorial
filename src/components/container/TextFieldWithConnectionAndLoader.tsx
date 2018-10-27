@@ -22,7 +22,7 @@ export class _TextFieldWithConnectionAndLoader extends React.PureComponent<TextF
     return (
       <div>
         <div>Try change the text and see that the text value resets after 5 seconds.</div>
-        <div>To overcome this loading problem. 1) Used modal/dialog to display loading, or put into the compoent.</div>
+        <div>To overcome this loading problem. 1) Used modal/dialog to display loading, or put into the component.</div>
         <UsingTextField value={this.props.value} ref={this.anotherRef}/>
       </div>
     );

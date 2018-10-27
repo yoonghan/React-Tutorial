@@ -8,6 +8,7 @@ import {TextFieldWithConnectionWrapper} from "./components/container/TextFieldWi
 import {TextFieldWithConnectionAndLoader} from "./components/container/TextFieldWithConnectionAndLoader";
 import {TextFieldWithConnectionWithConnection} from "./components/container/TextFieldWithConnectionWithConnection";
 import {SwitchingButtonWithSubmit} from "./components/container/SwitchingButtonWithSubmit";
+import {TestMemoTextField} from "./components/container/TestMemoTextField";
 
 /**
  * Example to use route.
@@ -57,7 +58,8 @@ import {SwitchingButtonWithSubmit} from "./components/container/SwitchingButtonW
 
 
 /**
- * How hoc is used, this also shows if Loading is put in render, the add/removal of component resets the value.
+ * Display a hoc issue, this demos the component get reset when the page rerenders.
+ * E.g. Such example encountered is that, I added a componentWillMount in the main Component then create an external connect to the hoc, when the main components rerenders it triggers the hoc's componentWillMount again, and this cause the component to reset.
  **/
 // ReactDOM.render(
 //     <TextFieldWithConnectionAndLoader value={"sample"}/>,
@@ -65,7 +67,7 @@ import {SwitchingButtonWithSubmit} from "./components/container/SwitchingButtonW
 // );
 
 /**
- * Test how text field with Connection that call ontop of it another connection first.
+ * Test how text field with a URL Connection call ontop of another URL Connection.
  **/
  //A hack on the top.
 //  const props:any = {
@@ -77,9 +79,19 @@ import {SwitchingButtonWithSubmit} from "./components/container/SwitchingButtonW
 // );
 
 /**
- * Triggering a changing button, upon click it triggers the database and each calls the service
+ * Triggering a changing button, upon click it triggers the database and before the buttons toggles into another state
+ * Suspend -> Click -> Trigger DB -> Unsuspend show -> Click -> Trigger DB -> ...
+ **/
+// ReactDOM.render(
+//     <SwitchingButtonWithSubmit id="55"/>,
+//     document.getElementById("example")
+// );
+
+/**
+ * Using the new memo in react 16.6, which we can use React.SFC instead of PureComponent.
+ * See the MemoTextField doesn't get re-rendered if only the first textbox is changed.
  **/
 ReactDOM.render(
-    <SwitchingButtonWithSubmit id="55"/>,
+    <TestMemoTextField/>,
     document.getElementById("example")
 );

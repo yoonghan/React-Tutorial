@@ -33,7 +33,7 @@ export class UsingTextField extends React.PureComponent<UsingTextFieldProp, Usin
   }
 
   render() {
-      console.log("Re render text box on each type");
+    console.log("Re render text box on each type");
     return <TextField value={this.state.value} onChange={this._onChange} placeholder={"Enter a text"}/>;
   }
 }
